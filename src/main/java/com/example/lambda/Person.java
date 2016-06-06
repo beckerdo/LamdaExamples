@@ -12,9 +12,6 @@ public class Person {
   protected String eMail;
   protected String phone;
   protected String address;
-
-  
-  
   
   private Person(){
     super();
@@ -163,8 +160,7 @@ public class Person {
 	            .phoneNumber("201-121-4678")
 	            .address("44 4th St, Smallville, KS 12333")
 	            .build() 
-	      );
-	    
+	      );	    
 	    people.add(
 	      new Person.Builder()
 	            .givenName("Jane")
@@ -175,8 +171,7 @@ public class Person {
 	            .phoneNumber("202-123-4678")
 	            .address("33 3rd St, Smallville, KS 12333")
 	            .build() 
-	      );
-	    
+	      );	    
 	    people.add(
 	      new Person.Builder()
 	            .givenName("John")
@@ -187,8 +182,7 @@ public class Person {
 	            .phoneNumber("202-123-4678")
 	            .address("33 3rd St, Smallville, KS 12333")
 	            .build()
-	    );
-	    
+	    );	    
 	    people.add(
 	      new Person.Builder()
 	            .givenName("James")
@@ -199,8 +193,7 @@ public class Person {
 	            .phoneNumber("333-456-1233")
 	            .address("201 2nd St, New York, NY 12111")
 	            .build()
-	    );
-	    
+	    );	    
 	    people.add(
 	      new Person.Builder()
 	            .givenName("Joe")
@@ -212,7 +205,6 @@ public class Person {
 	            .address("111 1st St, Town, CA 11111")
 	            .build()
 	    );
-	    
 	    people.add(
 	      new Person.Builder()
 	            .givenName("Phil")
@@ -223,8 +215,7 @@ public class Person {
 	            .phoneNumber("222-33-1234")
 	            .address("22 2nd St, New Park, CO 222333")
 	            .build()
-	    );
-	    
+	    );	    
 	    people.add(
 	      new Person.Builder()
 	            .givenName("Betty")
@@ -237,8 +228,6 @@ public class Person {
 	            .build()
 	    );
 	    
-	    
     return people;
-  } // createShortList
-	  
+  } // createShortList	  
 }

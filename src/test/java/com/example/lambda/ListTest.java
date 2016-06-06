@@ -9,9 +9,7 @@ public class ListTest {
 
 	@Test
 	public void listTest() {
-
 		List<Person> pl = Person.createShortList();
-
 		SearchCriteria search = SearchCriteria.getInstance();
 
 		// Make a new list after filtering.

@@ -14,7 +14,6 @@ public class FilterMapReduceTest {
 	@Test
 	public void filterMapReduceTest() {
 		List<Person> pl = Person.createShortList();
-
 		SearchCriteria search = SearchCriteria.getInstance();
 
 		System.out.println("\nOldest with iteration");
@@ -34,8 +33,10 @@ public class FilterMapReduceTest {
 		// Get sum of ages
 		System.out.println("\nOldest with serial filter/map/reduce");
 		instant = System.currentTimeMillis();
-		int maxAge = pl.stream().filter(search.getCriteria("retirees"))
-				.mapToInt(p -> p.getAge()).max().getAsInt();
+		int maxAge = pl.stream()
+		        .filter(search.getCriteria("allRetirees"))
+				.mapToInt(p -> p.getAge()).max()
+				.getAsInt();
 		System.out.println("Oldest Age: " + maxAge);
 		System.out.println("Elapsed Time: "
 				+ (System.currentTimeMillis() - instant));
@@ -43,8 +44,10 @@ public class FilterMapReduceTest {
 		// Get sum of ages
 		System.out.println("\nOldest with parallel filter/map/reduce");
 		instant = System.currentTimeMillis();
-		maxAge = pl.parallelStream().filter(search.getCriteria("retirees"))
-				.mapToInt(p -> p.getAge()).max().getAsInt();
+		maxAge = pl.parallelStream()
+		        .filter(search.getCriteria("allRetirees"))
+				.mapToInt(p -> p.getAge()).max()
+				.getAsInt();
 		System.out.println("Oldest Age: " + maxAge);
 		System.out.println("Elapsed Time: "
 				+ (System.currentTimeMillis() - instant));

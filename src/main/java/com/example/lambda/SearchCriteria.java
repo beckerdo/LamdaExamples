@@ -17,27 +17,23 @@ public class SearchCriteria {
     Predicate<Person> allDrivers = p -> p.getAge() >= 16;
     Predicate<Person> allDraftees = p -> p.getAge() >= 18 && p.getAge() <= 25 && p.getGender() == Gender.MALE;
     Predicate<Person> allPilots = p -> p.getAge() >= 23 && p.getAge() <= 65;
+    Predicate<Person> allRetirees = p -> p.getAge() >= 62;
 
     searchMap.put("allDrivers", allDrivers);
     searchMap.put("allDraftees", allDraftees);
     searchMap.put("allPilots", allPilots);
-
+    searchMap.put("allRetirees", allRetirees);
   }
 
   public Predicate<Person> getCriteria(String PredicateName) {
-    Predicate<Person> target;
-
-    target = searchMap.get(PredicateName);
+    Predicate<Person> target = searchMap.get(PredicateName);
 
     if (target == null) {
-
       System.out.println("Search Criteria not found... ");
       System.exit(1);
-    
     }
       
     return target;
-
   }
 
   public static SearchCriteria getInstance() {
